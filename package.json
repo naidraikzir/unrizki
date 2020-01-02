@@ -1,0 +1,16 @@
+{
+  "name": "unrizki",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vuepress dev posts",
+    "build": "vuepress build posts"
+  },
+  "devDependencies": {
+    "date-fns": "^2.8.1",
+    "node-sass": "^4.13.0",
+    "normalize.css": "^8.0.1",
+    "sass-loader": "^8.0.0",
+    "vuepress": "^1.2.0"
+  }
+}

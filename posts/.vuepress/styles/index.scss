@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap');
+@import '~normalize.css';
+@import 'prism-atom-dark.css';
+@import 'variables';
+@import 'mixins';
+@import 'typography';
+
+html {
+  color: $darkgrey;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+// blocks
+section {
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+article {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 52em;
+  padding: 1em;
+}
+
+p {
+  margin-bottom: 2em;
+  margin-top: 2em;
+  max-width: 52em;
+
+  blockquote & {
+    display: inline;
+  }
+}
+
+blockquote {
+  margin: 2em 0;
+  padding-left: 1.5em;
+  position: relative;
+  transition: 0.2s ease;
+  &::before {
+    content: "❝";
+    left: -0.05em;
+    margin-right: 0.6em;
+    opacity: 0.5;
+    position: absolute;
+    top: -0.5em;
+  }
+}
+
+ol,
+ul {
+  margin-left: 0;
+  padding-left: 2em;
+}
+
+table,
+tbody,
+tr,
+td {
+  display: block;
+}
+
+table {
+  border-spacing: 0;
+  margin: 1.4em 0;
+  max-width: 100%;
+  width: 100%;
+  @include breakpoint('md') {
+    display: table;
+  }
+}
+
+thead {
+  display: none;
+
+  @include breakpoint('md') {
+    display: table-header-group;
+  }
+}
+
+tbody {
+  @include breakpoint('md') {
+    display: table-row-group;
+  }
+}
+
+tr {
+  padding: 0.6em 0;
+
+  @include breakpoint('md') {
+    display: table-row;
+  }
+}
+
+th {
+  article &:not([align=center]):not([align=right]) {
+    text-align: left;
+  }
+}
+
+td,
+th {
+  padding: 0.3em 0.6em;
+}
+
+td {
+  @include breakpoint('md') {
+    border-top: 1px solid $grey;
+    display: table-cell;
+  }
+}
+
+pre {
+  background-color: #151f28;
+  border-radius: 4px;
+  box-shadow: 0 1.5em 1.5em -0.75em rgba(0, 0, 0, 0.25);
+  color: white;
+  overflow-x: auto;
+  max-width: 52em;
+  padding: 1em 0;
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+form {
+  margin-bottom: 1em;
+}
+
+fieldset {
+  border: 0;
+  margin: 1em 0;
+  padding: 0;
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+figcaption {
+  text-align: center;
+}
+
+// inlines
+a {
+  border-bottom: 1px solid $blue;
+  color: $blue;
+  cursor: pointer;
+  outline: 0;
+  text-decoration: none;
+}
+
+q {
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+}
+
+code {
+  background-color: #151f28;
+  border-radius: 4px;
+  box-shadow: 0 0.5em 0.5em -0.25em rgba(0, 0, 0, 0.25);
+  color: white;
+  display: inline-block;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: none;
+  }
+
+  pre & {
+    box-shadow: none;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+label {
+  cursor: pointer;
+}
+
+input:not([type=checkbox]):not([type=radio]):not([type=range]),
+textarea,
+select,
+button {
+  appearance: none;
+  box-sizing: border-box;
+  outline: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+input:not([type=range]),
+textarea,
+select {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  display: inline-block;
+  margin-right: 0.4em;
+  min-width: initial;
+  max-width: initial;
+  + label {
+    display: inline-block;
+    font-weight: normal;
+  }
+}
+
+input[type=submit],
+input[type=reset],
+button {
+  cursor: pointer;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: white;
+    border-radius: 20px;
+  }
+
+  &::-webkit-slider-thumb {
+    box-shadow: inset 0 0 0 3px $darkgrey;
+    border: 2px solid white;
+    height: 16px;
+    width: 16px;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -6px;
+  }
+
+  &:focus::-webkit-slider-runnable-track {
+    background: white;
+  }
+}
+
+input[type=range] {
+  &::-moz-range-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: white;
+    border-radius: 2px;
+  }
+
+  &::-moz-range-thumb {
+    border: 1px solid rgba($darkgrey, 0);
+    height: 15px;
+    width: 15px;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+  }
+}
+
+input[type=range] {
+  &::-ms-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+
+  &::-ms-thumb {
+    border: 1px solid rgba($darkgrey, 0);
+    height: 15px;
+    width: 15px;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    height: 4px;
+  }
+
+  &::-ms-fill-upper,
+  &::-ms-fill-lower {
+    border-radius: 4px;
+  }
+
+  &::-ms-fill-upper {
+    background: white;
+  }
+
+  &::-ms-fill-lower {
+    background: #fafafa;
+  }
+
+  &:focus::-ms-fill-lower,
+  &:focus::-ms-fill-upper {
+    background: white;
+  }
+}
+
+textarea {
+  resize: none;
+  min-height: 8em;
+}
+
+select {
+  background-color: white;
+  background-image: linear-gradient(45deg, transparent 50%, $darkgrey 50%),
+                    linear-gradient(135deg, $darkgrey 50%, transparent 50%);
+  background-size: 5px 5px;
+  background-position: calc(100% - 15px) 14px, calc(100% - 10px) 14px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 white;
+}
+
+button {
+  background-color: $blue;
+  color: $darkgrey;
+  border: 0;
+  margin-bottom: 1em;
+  position: relative;
+  user-select: none;
+  transition: 0.2s;
+
+  &:hover {
+    &::before {
+      box-shadow: 0 0 10px 0 rgba($blue, 0.5);
+    }
+  }
+
+  & + & {
+    margin-left: 0.8em;
+  }
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+
+  p & {
+    display: block;
+    margin: auto;
+    width: initial;
+  }
+}
+
+svg {
+  vertical-align: middle;
+}
+
+mark {
+  background-color: white;
+  color: $darkgrey;
+}
+
+// extras
+::selection {
+  background-color: $darkgrey;
+  color: white;
+}
+
+:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+// vuepress classes
+.header-anchor {
+  display: none;
+}
