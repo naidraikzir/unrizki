@@ -85,7 +85,7 @@ section {
     transform: translateX(0);
   }
 
-  h2 {
+  h3 {
     margin: 0;
   }
 
