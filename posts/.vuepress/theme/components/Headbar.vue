@@ -1,7 +1,7 @@
 <template>
   <header>
     <a href="/">
-      <h3>Unrizki</h3>
+      <h3>Unr.</h3>
     </a>
     <nav>
       <router-link
@@ -28,7 +28,7 @@ export default {
         exact: true
       },
       {
-        path: '/about',
+        path: '/about.html',
         text: 'About',
         name: 'about',
         exact: false

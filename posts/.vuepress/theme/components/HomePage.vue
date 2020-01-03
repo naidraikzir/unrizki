@@ -1,10 +1,8 @@
 <template>
   <article>
-    <transition name="fade">
-      <section v-if="loading">
-        <loader />
-      </section>
-    </transition>
+    <section v-if="loading">
+      <loader />
+    </section>
     <div
       v-for="(page, index) in posts"
       :key="page.key"
@@ -46,7 +44,7 @@ export default {
   computed: {
     posts() {
       return this.$site.pages
-        .filter(p => p.path !== '/')
+        .filter(p => !['/', '/about.html'].includes(p.path))
         .sort((a, b) =>
           new Date(
             b.frontmatter.date || b.lastUpdated
@@ -58,7 +56,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.loading = false
-    }, 1000)
+    }, 500)
   },
 
   methods: {
@@ -91,10 +89,6 @@ section {
 
   a {
     border: 0;
-  }
-
-  small {
-    margin-left: 0.25em;
   }
 }
 

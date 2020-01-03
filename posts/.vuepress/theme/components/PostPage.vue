@@ -1,10 +1,8 @@
 <template>
   <div>
-    <transition name="fade">
-      <section v-if="loading">
-        <loader />
-      </section>
-    </transition>
+    <section v-if="loading">
+      <loader />
+    </section>
     <article
       class="head"
       :class="{ 'shown': !loading }"
