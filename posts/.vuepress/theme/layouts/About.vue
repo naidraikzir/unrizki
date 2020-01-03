@@ -8,15 +8,18 @@
     >
       <Content />
     </div>
+    <Footbar />
   </div>
 </template>
 
 <script>
 import Headbar from '../components/Headbar'
+import Footbar from '../components/Footbar'
 
 export default {
   components: {
-    Headbar
+    Headbar,
+    Footbar
   },
 
   data: () => ({
@@ -52,6 +55,7 @@ export default {
 }
 
 .greet {
+  min-height: calc(100vh - (2 * 63px + 36px));
   padding: 1em;
 }
 </style>

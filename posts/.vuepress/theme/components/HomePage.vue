@@ -69,6 +69,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+article {
+  min-height: calc(100vh - (2 * 63px + 36px));
+}
+
 section {
   height: 10em;
 }

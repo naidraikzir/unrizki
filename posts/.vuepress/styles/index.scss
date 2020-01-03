@@ -5,6 +5,12 @@
 @import 'mixins';
 @import 'typography';
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   color: $darkgrey;
   overflow-x: hidden;

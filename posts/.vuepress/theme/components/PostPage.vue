@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <section v-if="loading">
       <loader />
     </section>
@@ -48,6 +48,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.wrapper {
+  min-height: calc(100vh - (2 * 63px + 2em));
+}
+
 .head {
   margin-bottom: 1.5em;
   opacity: 0;
