@@ -10,6 +10,18 @@ html {
   @include breakpoint('sm') {
     font-size: 18px;
   }
+
+  @include breakpoint('md') {
+    font-size: 20px;
+  }
+
+  @include breakpoint('lg') {
+    font-size: 22px;
+  }
+
+  @include breakpoint('xl') {
+    font-size: 24px;
+  }
 }
 
 h1, h2, h3 {

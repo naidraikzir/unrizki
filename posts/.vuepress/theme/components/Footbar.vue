@@ -1,6 +1,7 @@
 <template>
   <article>
     <span>©</span>
+    <b>Unrizki</b>
     {{ new Date().getFullYear() }}
   </article>
 </template>
