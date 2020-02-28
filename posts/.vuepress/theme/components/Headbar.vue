@@ -68,7 +68,7 @@ nav {
   transition: 0.3s;
 
   &.router-link-active {
-    color: #0000FF;
+    color: #4661FF;
   }
 
   & + & {
@@ -81,7 +81,7 @@ nav {
 
   &::before {
     content: '';
-    border-bottom: 0.3em solid #0000FF;
+    border-bottom: 0.3em solid #4661FF;
     border-radius: 1em;
     left: 0;
     bottom: -0.5em;
@@ -92,6 +92,16 @@ nav {
     width: 1em;
     will-change: transform;
     z-index: -1;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  h3 {
+    color: #E0E0E0;
+  }
+
+  .item {
+    color: #E0E0E0;
   }
 }
 </style>

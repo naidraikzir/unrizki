@@ -346,18 +346,13 @@ select:-moz-focusring {
 
 button {
   background-color: $blue;
+  box-shadow: 0 10px 20px 0 rgba($blue, 0.25);
   color: $darkgrey;
   border: 0;
   margin-bottom: 1em;
   position: relative;
   user-select: none;
   transition: 0.2s;
-
-  &:hover {
-    &::before {
-      box-shadow: 0 0 10px 0 rgba($blue, 0.5);
-    }
-  }
 
   & + & {
     margin-left: 0.8em;
@@ -397,4 +392,21 @@ mark {
 // vuepress classes
 .header-anchor {
   display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: $darkgrey;
+    color: $grey;
+  }
+
+  a {
+    border-color: $lightblue;
+    color: $lightblue;
+  }
+
+  button {
+    background-color: $lightblue;
+    box-shadow: 0 10px 20px 0 rgba($lightblue, 0.25);
+  }
 }
