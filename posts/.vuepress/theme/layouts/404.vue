@@ -8,7 +8,6 @@
 
 <style lang="scss" scoped>
 div {
-  color: #222;
   margin: 5em auto 2em;
   max-width: 64em;
   padding: 1em;

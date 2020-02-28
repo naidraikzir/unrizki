@@ -45,7 +45,6 @@ export default {
 /deep/ a {
   border: 0;
   font-weight: 600;
-  color: #222;
   text-decoration: none;
 }
 
