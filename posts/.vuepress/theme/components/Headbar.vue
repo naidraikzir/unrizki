@@ -48,7 +48,7 @@ header {
 }
 
 h3 {
-  color: #222;
+  color: var(--color-text-default);
   margin: 0;
 }
 
@@ -62,13 +62,13 @@ nav {
 
 .item {
   border: 0;
-  color: #222;
+  color: var(--color-text-default);
   font-weight: 700;
   position: relative;
   transition: 0.3s;
 
   &.router-link-active {
-    color: #4661FF;
+    color: var(--color-text-link);
   }
 
   & + & {
@@ -81,7 +81,7 @@ nav {
 
   &::before {
     content: '';
-    border-bottom: 0.3em solid #4661FF;
+    border-bottom: 0.3em solid var(--color-text-link);
     border-radius: 1em;
     left: 0;
     bottom: -0.5em;
@@ -92,16 +92,6 @@ nav {
     width: 1em;
     will-change: transform;
     z-index: -1;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  h3 {
-    color: #E0E0E0;
-  }
-
-  .item {
-    color: #E0E0E0;
   }
 }
 </style>
