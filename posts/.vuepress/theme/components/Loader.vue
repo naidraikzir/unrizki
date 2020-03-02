@@ -16,7 +16,7 @@ export default {
     },
     color: {
       type: String,
-      default: '#444'
+      default: 'var(--color-text-default)'
     }
   }
 }

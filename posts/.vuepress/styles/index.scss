@@ -5,6 +5,24 @@
 @import 'mixins';
 @import 'typography';
 
+:root {
+  --color-background: #E0E0E0;
+  --color-background-dark: #151F28;
+  --color-text-default: #222;
+  --color-text-link: #0000FF;
+  --color-text-dark: #E0E0E0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #222;
+    --color-background-dark: #000000;
+    --color-text-default: #E0E0E0;
+    --color-text-link: #4661FF;
+    --color-text-dark: #E0E0E0;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -12,7 +30,8 @@
 }
 
 html {
-  color: $darkgrey;
+  background-color: var(--color-background);
+  color: var(--color-text-default);
   overflow-x: hidden;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -117,16 +136,16 @@ th {
 
 td {
   @include breakpoint('md') {
-    border-top: 1px solid $grey;
+    border-top: 1px solid var(--color-text-default);
     display: table-cell;
   }
 }
 
 pre {
-  background-color: #151f28;
+  background-color: var(--color-background-dark) !important;
   border-radius: 4px;
   box-shadow: 0 1.5em 1.5em -0.75em rgba(0, 0, 0, 0.25);
-  color: white;
+  color: var(--color-text-dark);
   overflow-x: auto;
   max-width: 52em;
   padding: 1em 0;
@@ -158,8 +177,8 @@ figcaption {
 
 // inlines
 a {
-  border-bottom: 1px solid $blue;
-  color: $blue;
+  border-bottom: 1px solid var(--color-text-link);
+  color: var(--color-text-link);
   cursor: pointer;
   outline: 0;
   text-decoration: none;
@@ -171,10 +190,10 @@ q {
 }
 
 code {
-  background-color: #151f28;
+  background-color: var(--color-background-dark);
   border-radius: 4px;
   box-shadow: 0 0.5em 0.5em -0.25em rgba(0, 0, 0, 0.25);
-  color: white;
+  color: var(--color-text-dark);
   display: inline-block;
   padding-left: 0.3em;
   padding-right: 0.3em;
@@ -245,24 +264,24 @@ input[type=range] {
     width: 100%;
     height: 4px;
     cursor: pointer;
-    background: white;
+    background: var(--color-background);
     border-radius: 20px;
   }
 
   &::-webkit-slider-thumb {
-    box-shadow: inset 0 0 0 3px $darkgrey;
-    border: 2px solid white;
+    box-shadow: inset 0 0 0 3px var(--color-text-default);
+    border: 2px solid var(--color-background);
     height: 16px;
     width: 16px;
     border-radius: 8px;
-    background: white;
+    background: var(--color-background);
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -6px;
   }
 
   &:focus::-webkit-slider-runnable-track {
-    background: white;
+    background: var(--color-background);
   }
 }
 
@@ -271,16 +290,16 @@ input[type=range] {
     width: 100%;
     height: 4px;
     cursor: pointer;
-    background: white;
+    background: var(--color-background);
     border-radius: 2px;
   }
 
   &::-moz-range-thumb {
-    border: 1px solid rgba($darkgrey, 0);
+    border: 1px solid rgba(var(--color-text-default), 0);
     height: 15px;
     width: 15px;
     border-radius: 10px;
-    background: white;
+    background: var(--color-background);
     cursor: pointer;
   }
 }
@@ -296,11 +315,11 @@ input[type=range] {
   }
 
   &::-ms-thumb {
-    border: 1px solid rgba($darkgrey, 0);
+    border: 1px solid rgba(var(--color-text-default), 0);
     height: 15px;
     width: 15px;
     border-radius: 10px;
-    background: white;
+    background: var(--color-background);
     cursor: pointer;
     height: 4px;
   }
@@ -311,16 +330,16 @@ input[type=range] {
   }
 
   &::-ms-fill-upper {
-    background: white;
+    background: var(--color-background);
   }
 
   &::-ms-fill-lower {
-    background: #fafafa;
+    background: var(--color-background);
   }
 
   &:focus::-ms-fill-lower,
   &:focus::-ms-fill-upper {
-    background: white;
+    background: var(--color-background);
   }
 }
 
@@ -330,9 +349,9 @@ textarea {
 }
 
 select {
-  background-color: white;
-  background-image: linear-gradient(45deg, transparent 50%, $darkgrey 50%),
-                    linear-gradient(135deg, $darkgrey 50%, transparent 50%);
+  background-color: var(--color-background);
+  background-image: linear-gradient(45deg, transparent 50%, var(--color-text-default) 50%),
+                    linear-gradient(135deg, var(--color-text-default) 50%, transparent 50%);
   background-size: 5px 5px;
   background-position: calc(100% - 15px) 14px, calc(100% - 10px) 14px;
   background-repeat: no-repeat;
@@ -341,13 +360,13 @@ select {
 
 select:-moz-focusring {
   color: transparent;
-  text-shadow: 0 0 0 white;
+  text-shadow: 0 0 0 var(--color-background);
 }
 
 button {
-  background-color: $blue;
-  box-shadow: 0 10px 20px 0 rgba($blue, 0.25);
-  color: $darkgrey;
+  background-color: var(--color-text-link);
+  box-shadow: 0 10px 20px 0 rgba(var(--color-text-link), 0.25);
+  color: var(--color-text-default);
   border: 0;
   margin-bottom: 1em;
   position: relative;
@@ -375,38 +394,21 @@ svg {
 }
 
 mark {
-  background-color: white;
-  color: $darkgrey;
+  background-color: var(--color-background);
+  color: var(--color-text-default);
 }
 
 // extras
 ::selection {
-  background-color: $darkgrey;
-  color: white;
+  background-color: var(--color-text-default);
+  color: var(--color-background);
 }
 
 :-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-background) inset;
 }
 
 // vuepress classes
 .header-anchor {
   display: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    background-color: $darkgrey;
-    color: $grey;
-  }
-
-  a {
-    border-color: $lightblue;
-    color: $lightblue;
-  }
-
-  button {
-    background-color: $lightblue;
-    box-shadow: 0 10px 20px 0 rgba($lightblue, 0.25);
-  }
 }
