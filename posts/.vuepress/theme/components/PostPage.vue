@@ -55,12 +55,12 @@ export default {
 .head {
   margin-bottom: 1.5em;
   opacity: 0;
-  transform: translateY(-5em);
-  transition: 0.3s cubic-bezier(0, 0, 0, 1.2);
+  transform: scale(1.05) translateY(-0.5em);
+  transition: 0.5s cubic-bezier(0, 0, 0, 1.2);
 
   &.shown {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1) translateY(0);
   }
 
   h2 {
@@ -81,8 +81,8 @@ export default {
 
 .content {
   opacity: 0;
-  transform: translateY(5em);
-  transition: 0.3s cubic-bezier(0, 0, 0, 1.2);
+  transform: translateY(-1em);
+  transition: 0.5s cubic-bezier(0, 0, 0, 1.2);
 
   &.shown {
     opacity: 1;

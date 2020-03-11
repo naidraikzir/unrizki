@@ -2,7 +2,6 @@
   <div class="wrapper">
     <Headbar />
     <div
-      v-if="mounted"
       class="greet"
       :class="{ 'mounted': mounted }"
     >
@@ -29,7 +28,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.mounted = true
-    }, 100)
+    }, 250)
   },
 
   beforeRouteLeave(to, from, next) {
@@ -55,6 +54,14 @@ export default {
 
 .greet {
   min-height: calc(100vh - (2 * 63px + 36px));
+  opacity: 0;
   padding: 1em;
+  transform: scale(1.05) translateY(-1%);
+  transition: 0.3s;
+
+  &.mounted {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 </style>

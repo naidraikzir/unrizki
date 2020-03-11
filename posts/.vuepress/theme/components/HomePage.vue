@@ -1,18 +1,15 @@
 <template>
   <article>
-    <section v-if="loading">
-      <loader />
-    </section>
     <div
+      class="title"
       v-for="(page, index) in posts"
       :key="page.key"
       :style="{ transitionDelay: (index * 0.15) + 's' }"
-      class="title"
       :class="{ 'shown': !loading }"
     >
       <div
-        v-if="index > 0"
         class="separator"
+        v-if="index > 0"
       >
         ———
       </div>
@@ -30,13 +27,8 @@
 
 <script>
 import { format, getYear } from 'date-fns'
-import Loader from './Loader'
 
 export default {
-  components: {
-    Loader
-  },
-
   data: () => ({
     loading: true
   }),
@@ -56,7 +48,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.loading = false
-    }, 500)
+    }, 250)
   },
 
   methods: {
@@ -79,12 +71,12 @@ section {
 
 .title {
   opacity: 0;
-  transform: translateX(-2em);
-  transition: 0.3s cubic-bezier(0, 0, 0, 1.2);
+  transform: scale(1.05);
+  transition: 0.35s cubic-bezier(0, 0, 0, 1.2);
 
   &.shown {
     opacity: 1;
-    transform: translateX(0);
+    transform: scale(1);
   }
 
   h3 {
