@@ -57,7 +57,7 @@ export default {
   opacity: 0;
   padding: 1em;
   transform: scale(1.05) translateY(-1%);
-  transition: 0.3s;
+  transition: 0.5s cubic-bezier(0, 0, 0, 1.5);
 
   &.mounted {
     opacity: 1;

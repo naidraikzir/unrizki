@@ -71,8 +71,10 @@ section {
 
 .title {
   opacity: 0;
-  transform: scale(1.05);
-  transition: 0.35s cubic-bezier(0, 0, 0, 1.2);
+  transform: scale(1.1);
+  transition:
+    opacity 0.5s,
+    transform 0.5s cubic-bezier(0, 0, 0, 1.5);
 
   &.shown {
     opacity: 1;
