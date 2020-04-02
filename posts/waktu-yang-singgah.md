@@ -1,6 +1,6 @@
 ---
 title: Waktu Yang Singgah
-date: 2019-01-08
+date: 2020-01-08
 lang: id-ID
 description: about time
 ---
