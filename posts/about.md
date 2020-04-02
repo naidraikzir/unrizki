@@ -14,4 +14,4 @@ A self taught person, loves to discover cool things.
 An avid traveler 🎒. An amateur photographer 📷.  
 Got any idea for your next big app ? Let's get in touch 🙋
 
-<a href="tel:+6285974002493">☎️</a> – <a href="mailto:hi@unrizki.id">✉️</a> – [Resume](https://drive.google.com/open?id=1fOedjiN-Yquq_QWBrBbW8MqmEI8ZuRPM) – [Github](https://github.com/naidraikzir)
+<a href="tel:+6285974002493">☎️</a> – <a href="mailto:hi@unrizki.id">✉️</a> – [Resume](/resume.pdf) – [Github](https://github.com/naidraikzir)
