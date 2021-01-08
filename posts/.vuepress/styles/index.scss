@@ -8,15 +8,15 @@
 :root {
   --color-background: #E0E0E0;
   --color-background-dark: #151F28;
-  --color-text-default: #222;
+  --color-text-default: #111;
   --color-text-link: #0000FF;
   --color-text-dark: #E0E0E0;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: #222;
-    --color-background-dark: #000000;
+    --color-background: #000;
+    --color-background-dark: #111;
     --color-text-default: #E0E0E0;
     --color-text-link: #DFD000;
     --color-text-dark: #E0E0E0;
