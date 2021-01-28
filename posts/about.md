@@ -7,8 +7,8 @@ layout: About
 ---
 
 Name is **Rizki Ardian**. Develops apps from Indonesia 🇮🇩.  
-Been using html, css, sass, jquery, [laravel](https://laravel.com), [nodejs](https://nodejs.org), and [vuejs](https://vuejs.org) 🖖 since then.  
-Currently learning ~~ios~~ mobile 📱 development using [flutter](https://flutter.io).  
+Been using html, css, sass, jquery, laravel, nodejs, and vuejs 🖖 since then.  
+Currently learning ~~ios~~ mobile 📱 development using flutter.  
 Loves to use shell along with zsh.  
 A self taught person, loves to discover cool things.  
 An avid traveler 🎒. An amateur photographer 📷.  
