@@ -1,14 +1,20 @@
 <template>
   <article>
-    <span>©</span>
-    <b>Unrizki</b>
-    {{ new Date().getFullYear() }}
+    <div>
+      <span>©</span>
+      <b>Unrizki</b>
+      {{ new Date().getFullYear() }}
+    </div>
   </article>
 </template>
 
 <style lang="scss" scoped>
 article {
-  text-align: center;
+  text-align: right;
+
+  div {
+    font-size: 0.75em;
+  }
 }
 
 span {

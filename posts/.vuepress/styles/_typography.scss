@@ -81,8 +81,13 @@ th {
 
 pre,
 code,
-code[class*="language-"],
-pre[class*="language-"] {
+pre[class*="language-"],
+code[class*="language-"] {
   font-family: $mono;
   letter-spacing: normal;
+}
+
+code,
+code[class*="language-"] {
+  font-size: 0.8em;
 }

@@ -5,7 +5,7 @@ lang: en-US
 description: vue, vite, typescript
 ---
 
-<img src="./vue-3-vite-typescript.svg" alt="vue 3 vite typescript" height="400px">
+<img src="./vue-3-vite-typescript.svg" alt="vue 3 vite typescript" style="max-height: 400px">
 
 Vue 3 has been out for almost a year. It supports Typescript out of the box because actually it is written in Typescript. I never used Typescript before. But here is my minimal setup for starting a Vue 3 project using Typescript which I hope I can learn Typescript by using it in a Vue project.
 
@@ -73,13 +73,13 @@ $ npm install --save-dev \
     @typescript-eslint/parser
 ```
 
-After that import `vue-global-api` in __src/main.ts__ file at most top line.
+After that import `vue-global-api` in __src/main.ts__ file at the first line.
 
 ```typescript
 import 'vue-global-api'
 ```
 
-Add import alias in __vite.config.ts__ file, so we don't have to write this confusing `import something from '../../../../../something'`
+Add import alias in __vite.config.ts__ file, so we don't have to write this confusing `import a from '../../../../a'`
 
 ```typescript
 import path from 'path'
@@ -139,6 +139,6 @@ You can just empty the `rules` or use whatever eslint rules you want.
 
 We use this setup to work using __vscode__, so we need to install __vite__ and __volar__ extensions for __vscode__. After both extensions installed, make sure __vue-ts-plugin__ at the bottom of the __vscode__ is enabled.
 
-And finally don't forget to install __vue-devtools__ >= 6.0.0 which support vue 3. Search chrome webstore for _"vue devtools"_ if you use chrome or edge. For firefox, you can download the _.xpi_ file from [https://github.com/vuejs/devtools/releases](https://github.com/vuejs/devtools/releases)
+And finally don't forget to install __vue-devtools__ >= 6.0.0 which support vue 3. Search chrome webstore for "vue devtools" if you use chrome or edge. For firefox, you can download the _.xpi_ file from [https://github.com/vuejs/devtools/releases](https://github.com/vuejs/devtools/releases)
 
 Happy building 😋.

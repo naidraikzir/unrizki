@@ -49,7 +49,7 @@ export default {
 
 .wrapper {
   margin: auto;
-  max-width: 52em;
+  max-width: 48em;
 }
 
 .greet {

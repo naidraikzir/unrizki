@@ -43,7 +43,7 @@ header {
   display: flex;
   margin: auto;
   margin-bottom: 2em;
-  max-width: 52em;
+  max-width: 48em;
   padding: 1em;
 }
 
