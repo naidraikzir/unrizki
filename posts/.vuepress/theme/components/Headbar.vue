@@ -75,7 +75,7 @@ nav {
     margin-left: 0.75em;
   }
 
-  &:hover::before {
+  /* &:hover::before {
     transform: scaleX(1);
   }
 
@@ -92,6 +92,6 @@ nav {
     width: 1em;
     will-change: transform;
     z-index: -1;
-  }
+  } */
 }
 </style>
