@@ -1,8 +1,10 @@
 <template>
   <div>
     <Headbar />
-    <HomePage v-if="isHome" />
-    <PostPage v-else />
+    <ClientOnly>
+      <HomePage v-if="isHome" />
+      <PostPage v-else />
+    </ClientOnly>
     <Footbar />
   </div>
 </template>
