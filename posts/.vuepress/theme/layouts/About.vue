@@ -28,14 +28,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.mounted = true
-    }, 250)
-  },
-
-  beforeRouteLeave(to, from, next) {
-    this.mounted = false
-    setTimeout(() => {
-      next()
-    }, 1500)
+    }, 150)
   }
 }
 </script>

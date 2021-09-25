@@ -74,24 +74,5 @@ nav {
   & + & {
     margin-left: 0.75em;
   }
-
-  /* &:hover::before {
-    transform: scaleX(1);
-  }
-
-  &::before {
-    content: '';
-    border-bottom: 0.3em solid var(--color-text-link);
-    border-radius: 1em;
-    left: 0;
-    bottom: -0.5em;
-    position: absolute;
-    transform-origin: left;
-    transform: scaleX(0);
-    transition: 0.2s ease-in-out;
-    width: 1em;
-    will-change: transform;
-    z-index: -1;
-  } */
 }
 </style>

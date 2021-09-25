@@ -10,9 +10,7 @@
       <div
         class="separator"
         v-if="index > 0"
-      >
-        ———
-      </div>
+      />
       <h3>
         <router-link :to="page.path">
           {{ page.title }}
@@ -91,6 +89,8 @@ section {
 }
 
 .separator {
+  border-top: 3px solid var(--color-text-default);
   margin: 1.5em 0;
+  width: 3em;
 }
 </style>
