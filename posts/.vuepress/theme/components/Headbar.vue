@@ -14,12 +14,27 @@
         {{ menu.text }}
       </router-link>
     </nav>
+    <a
+      class="theme-toggle"
+      @click.prevent="setTheme('light')"
+      v-if="theme === 'dark'"
+    >
+      🌙
+    </a>
+    <a
+      class="theme-toggle"
+      @click.prevent="setTheme('dark')"
+      v-else
+    >
+      ☀️
+    </a>
   </header>
 </template>
 
 <script>
 export default {
   data: () => ({
+    theme: 'light',
     menus: [
       {
         path: '/',
@@ -34,7 +49,34 @@ export default {
         exact: false
       }
     ]
-  })
+  }),
+
+  created() {
+    this.detectTheme()
+    window.matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', e => {
+        this.setTheme(e.matches ? 'dark' : 'light')
+      })
+  },
+
+  methods: {
+    detectTheme() {
+      const storageTheme = localStorage.getItem('theme')
+      if (
+        (storageTheme && storageTheme === 'dark')
+        || (!storageTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        this.setTheme('dark')
+      } else {
+        this.setTheme('light')
+      }
+    },
+    setTheme(theme) {
+      this.theme = theme
+      localStorage.setItem('theme', theme)
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+  }
 }
 </script>
 
@@ -64,15 +106,18 @@ nav {
   border: 0;
   color: var(--color-text-default);
   font-weight: 700;
+  margin-left: 0.75em;
   position: relative;
   transition: 0.3s;
 
   &.router-link-active {
     color: var(--color-text-link);
   }
+}
 
-  & + & {
-    margin-left: 0.75em;
-  }
+.theme-toggle {
+  display: inline-block;
+  margin-left: 0.75em;
+  user-select: none;
 }
 </style>
