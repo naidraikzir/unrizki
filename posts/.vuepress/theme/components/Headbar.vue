@@ -16,18 +16,8 @@
     </nav>
     <a
       class="theme-toggle"
-      @click.prevent="setTheme('light')"
-      v-if="theme === 'dark'"
-    >
-      🌙
-    </a>
-    <a
-      class="theme-toggle"
-      @click.prevent="setTheme('dark')"
-      v-else
-    >
-      ☀️
-    </a>
+      @click.prevent="setTheme(theme === 'dark' ? 'light' : 'dark')"
+    />
   </header>
 </template>
 
@@ -119,5 +109,23 @@ nav {
   display: inline-block;
   margin-left: 0.75em;
   user-select: none;
+
+  &::before {
+    content: '☀️';
+  }
+
+  [data-theme="dark"] &::before {
+    content: '🌙';
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &::before {
+      content: '🌙';
+    }
+
+    [data-theme="light"] &::before {
+      content: '☀️';
+    }
+  }
 }
 </style>
