@@ -51,7 +51,7 @@ export default {
     ]
   }),
 
-  created() {
+  mounted() {
     this.detectTheme()
     window.matchMedia('(prefers-color-scheme: dark)')
       .addEventListener('change', e => {
