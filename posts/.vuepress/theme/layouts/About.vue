@@ -46,7 +46,12 @@ export default {
 }
 
 .greet {
-  min-height: calc(100vh - (2 * 63px + 36px));
+  min-height: calc(
+    100vh
+    - (/* header */ 1 * 1.5rem + 2rem + 2rem)
+    - (/* footer */ 1.5 * 0.75rem + 2rem + 2rem)
+    /* line-height * font-size + y-margins + y-paddings */
+  );
   opacity: 0;
   padding: 1em;
   transform: scale(1.05) translateY(-1%);

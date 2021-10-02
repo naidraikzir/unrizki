@@ -1,15 +1,19 @@
 <template>
-  <article>
+  <footer>
     <div>
       <span>©</span>
       <b>Unrizki</b>
       {{ new Date().getFullYear() }}
     </div>
-  </article>
+  </footer>
 </template>
 
 <style lang="scss" scoped>
-article {
+footer {
+  margin: auto;
+  margin-top: 2em;
+  max-width: 48em;
+  padding: 1em;
   text-align: right;
 
   div {

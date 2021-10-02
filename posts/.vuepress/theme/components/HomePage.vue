@@ -7,10 +7,6 @@
       :style="{ transitionDelay: (index * 0.15) + 's' }"
       :class="{ 'shown': !loading }"
     >
-      <div
-        class="separator"
-        v-if="index > 0"
-      />
       <h3>
         <router-link :to="page.path">
           {{ page.title }}
@@ -60,7 +56,12 @@ export default {
 
 <style lang="scss" scoped>
 article {
-  min-height: calc(100vh - (2 * 63px + 36px));
+  min-height: calc(
+    100vh
+    - (/* header */ 1 * 1.5rem + 2rem + 2rem)
+    - (/* footer */ 1.5 * 0.75rem + 2rem + 2rem)
+    /* line-height * font-size + y-margins + y-paddings */
+  );
 }
 
 section {
@@ -79,6 +80,10 @@ section {
     transform: scale(1);
   }
 
+  & + & {
+    margin-top: 2em;
+  }
+
   h3 {
     margin: 0;
   }
@@ -86,11 +91,5 @@ section {
   a {
     border: 0;
   }
-}
-
-.separator {
-  border-top: 3px solid var(--color-text-default);
-  margin: 1.5em 0;
-  width: 3em;
 }
 </style>
