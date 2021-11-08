@@ -81,7 +81,7 @@ section {
   }
 
   & + & {
-    margin-top: 2em;
+    margin-top: 2.5em;
   }
 
   h3 {
