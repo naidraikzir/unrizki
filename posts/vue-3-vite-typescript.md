@@ -70,30 +70,14 @@ $ npm install --save-dev \
     eslint \
     eslint-plugin-vue \
     @typescript-eslint/eslint-plugin \
-    @typescript-eslint/parser
+    @typescript-eslint/parser \
+    @types/node
 ```
 
 After that import `vue-global-api` in __src/main.ts__ file at the first line.
 
 ```typescript
 import 'vue-global-api'
-```
-
-Add import alias in __vite.config.ts__ file, so we don't have to write this confusing `import a from '../../../../a'`
-
-```typescript
-import path from 'path'
-
-export default defineConfig({
-  plugins: [vue()],
-
-  // add this
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, '/src')
-    }
-  }
-})
 ```
 
 Inside __tsconfig.json__ file, add `baseUrl` and `paths` inside `compilerOptions` for autocompletion.
@@ -106,6 +90,34 @@ Inside __tsconfig.json__ file, add `baseUrl` and `paths` inside `compilerOptions
     "@/*": ["src/*"]
   }
 }
+```
+
+Inside __tsconfig.node.json__ file, add `allowSyntheticDefaultImports` inside `compilerOptions`.
+
+```json
+"compilerOptions": {
+  ...,
+  "allowSyntheticDefaultImports": true
+}
+```
+
+Add import alias in __vite.config.ts__ file, so we don't have to write this annoying `import a from '../../../../a'`
+
+```typescript
+import path from 'path' // add this line
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+
+export default defineConfig({
+  plugins: [vue()],
+
+  // add this
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, '/src')
+    }
+  }
+})
 ```
 
 Create __.eslintrc.js__ file with this config:
@@ -137,8 +149,8 @@ module.exports = {
 
 You can just empty the `rules` or use whatever eslint rules you want.
 
-We use this setup to work using __vscode__, so we need to install __vite__ and __volar__ extensions for __vscode__. After both extensions installed, make sure __vue-ts-plugin__ at the bottom of the __vscode__ is enabled.
+We use this setup to work using __vscode__, so we need to install __vite__ and __volar__ extensions for __vscode__.
 
-And finally don't forget to install __vue-devtools__ >= 6.0.0 which support vue 3. Search chrome webstore for "vue devtools" if you use chrome or edge. For firefox, you can download the _.xpi_ file from [https://github.com/vuejs/devtools/releases](https://github.com/vuejs/devtools/releases)
+And finally don't forget to install __vue-devtools__ >= 6.0.0 which supports vue 3. Search chrome webstore for "vue devtools" if you use chrome or edge. For firefox, you can download the _.xpi_ file from [https://github.com/vuejs/devtools/releases](https://github.com/vuejs/devtools/releases)
 
 Happy building 😋.
