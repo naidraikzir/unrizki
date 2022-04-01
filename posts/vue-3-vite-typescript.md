@@ -9,6 +9,11 @@ description: vue, vite, typescript
 
 Vue 3 has been out for almost a year. It supports Typescript out of the box because actually it is written in Typescript. I never used Typescript before. But here is my minimal setup for starting a Vue 3 project using Typescript which I hope I can learn Typescript by using it in a Vue project.
 
+#### Requirements
+
+- node >= 14
+- npm >= 7
+
 #### Scaffold using Vite
 
 To start, we can initialize a project using vite
@@ -71,7 +76,8 @@ $ npm install --save-dev \
     eslint-plugin-vue \
     @typescript-eslint/eslint-plugin \
     @typescript-eslint/parser \
-    @types/node
+    @types/node \
+    @babel/types
 ```
 
 After that import `vue-global-api` in __src/main.ts__ file at the first line.
