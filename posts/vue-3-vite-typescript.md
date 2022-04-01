@@ -114,9 +114,9 @@ export default defineConfig({
   // add this
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '/src')
-    }
-  }
+      '@': path.resolve(__dirname, '/src'),
+    },
+  },
 })
 ```
 
@@ -131,7 +131,7 @@ module.exports = {
     parser: '@typescript-eslint/parser',
   },
   plugins: [
-    '@typescript-eslint'
+    '@typescript-eslint',
   ],
   extends: [
     'eslint:recommended',
