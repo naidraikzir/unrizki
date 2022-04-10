@@ -14,7 +14,7 @@
         {{ menu.text }}
       </router-link>
     </nav>
-    <a
+    <span
       class="theme-toggle"
       @click.prevent="setTheme(theme === 'dark' ? 'light' : 'dark')"
     />
@@ -106,6 +106,7 @@ nav {
 }
 
 .theme-toggle {
+  cursor: pointer;
   display: inline-block;
   margin-left: 0.75em;
   user-select: none;
