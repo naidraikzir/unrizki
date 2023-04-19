@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { useData } from 'vitepress'
 
-const menus = [
+const menu = [
   {
     path: '/',
     text: 'Home',
@@ -50,13 +50,13 @@ function setTheme(newTheme) {
     </a>
     <nav>
       <a
-        v-for="menu in menus"
-        :href="menu.path"
-        :key="menu.path"
-        :class="{ active: page.title === menu.name }"
+        v-for="item in menu"
+        :href="item.path"
+        :key="item.path"
+        :class="{ active: page.title === item.name }"
         class="item"
       >
-        {{ menu.text }}
+        {{ item.text }}
       </a>
     </nav>
     <span

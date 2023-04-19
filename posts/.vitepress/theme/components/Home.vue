@@ -3,11 +3,11 @@ import { format, getYear } from 'date-fns'
 import { ref, onMounted } from 'vue'
 import { data as posts } from '../posts.data.js'
 
-const loading = ref(true)
+const loaded = ref(false)
 
 onMounted(() => {
   setTimeout(() => {
-    loading.value = false
+    loaded.value = true
   }, 250)
 })
 
@@ -25,7 +25,7 @@ function formatDate(date) {
     v-for="(post, index) in posts"
     :key="index"
     :style="{ transitionDelay: (index * 0.15) + 's' }"
-    :class="{ 'shown': !loading }"
+    :class="{ 'shown': loaded }"
   >
     <h3>
       <a :href="post.url">
@@ -33,7 +33,7 @@ function formatDate(date) {
       </a>
     </h3>
     <small>
-      <b>{{ formatDate(post.frontmatter.date || post.lastUpdated) }}</b>
+      <b>{{ formatDate(post.frontmatter.date) }}</b>
     </small>
   </div>
 </template>

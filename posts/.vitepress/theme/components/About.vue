@@ -1,25 +1,23 @@
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const loaded = ref(false)
+
+onMounted(() => {
+  setTimeout(() => {
+    loaded.value = true
+  }, 150)
+})
+</script>
+
 <template>
   <div
     class="greet"
-    :class="{ 'mounted': mounted }"
+    :class="{ 'loaded': loaded }"
   >
     <Content />
   </div>
 </template>
-
-<script>
-export default {
-  data: () => ({
-    mounted: false
-  }),
-
-  mounted() {
-    setTimeout(() => {
-      this.mounted = true
-    }, 150)
-  }
-}
-</script>
 
 <style lang="scss" scoped>
 :deep(a) {
@@ -33,7 +31,7 @@ export default {
   transform: scale(1.05) translateY(-1%);
   transition: 0.5s cubic-bezier(0, 0, 0, 1.5);
 
-  &.mounted {
+  &.loaded {
     opacity: 1;
     transform: scale(1) translateY(0);
   }
