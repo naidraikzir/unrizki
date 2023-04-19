@@ -6,6 +6,7 @@ import Home from './Home.vue'
 import Post from './Post.vue'
 import About from './About.vue'
 import NotFound from './NotFound.vue'
+import ToTop from './ToTop.vue'
 
 const { page, frontmatter } = useData()
 </script>
@@ -20,6 +21,7 @@ const { page, frontmatter } = useData()
       <Post v-else />
     </div>
     <Footer />
+    <ToTop />
   </div>
 </template>
 

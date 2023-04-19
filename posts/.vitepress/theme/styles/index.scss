@@ -1,5 +1,4 @@
 @import 'normalize.css';
-@import 'prism-atom-dark.css';
 @import 'variables';
 @import 'mixins';
 @import 'typography';
@@ -375,9 +374,6 @@ select:-moz-focusring {
 }
 
 button {
-  background-color: var(--color-text-link);
-  box-shadow: 0 10px 20px 0 rgba(var(--color-text-link), 0.25);
-  color: var(--color-text-default);
   border: 0;
   margin-bottom: 1em;
   position: relative;
