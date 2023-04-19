@@ -10,9 +10,7 @@
 
 <style lang="scss" scoped>
 footer {
-  margin: auto;
   margin-top: 2em;
-  max-width: 48em;
   padding: 1em;
   text-align: right;
 

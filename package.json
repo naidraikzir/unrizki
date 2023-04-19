@@ -1,16 +1,24 @@
 {
   "name": "unrizki",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
-    "dev": "vuepress dev posts",
-    "build": "vuepress build posts"
+    "dev": "vitepress dev posts",
+    "build": "vitepress build posts",
+    "preview": "vitepress preview posts"
   },
   "devDependencies": {
-    "date-fns": "^2.16.1",
-    "node-sass": "^4.14.1",
+    "date-fns": "^2.29.3",
     "normalize.css": "^8.0.1",
-    "sass-loader": "^8.0.0",
-    "vuepress": "^1.8.0"
+    "sass": "^1.62.0",
+    "vitepress": "1.0.0-alpha.72",
+    "vue": "^3.2.47"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
+    }
   }
 }

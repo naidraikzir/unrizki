@@ -1,11 +1,11 @@
-const path = require('path')
+import { defineConfig } from 'vitepress'
 
-module.exports = {
-  title: 'Unrizki',
-  description: 'Unrizki\'s Blog',
-  dest: path.resolve(__dirname, '../../dist'),
+// https://vitepress.dev/reference/site-config
+export default defineConfig({
+  title: "Unrizki",
+  description: "Unrizki's Blog",
+  cleanUrls: true,
   head: [
-    ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
     ['meta', { name: 'keywords', content: 'unrizki, developer' }],
     ['meta', { name: 'author', content: 'unrizki' }],
     ['meta', { name: 'google-site-verification', content: 'C6PUpooLizJmY5GMc5givDPgKhx9wQo_RBfWuC0PFtc' }],
@@ -14,6 +14,5 @@ module.exports = {
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap' }],
     ['link', { rel: 'stylesheet', href: 'https://api.fontshare.com/css?f[]=satoshi@400,700&display=swap' }],
     ['link', { rel: 'shortcut icon', href: '/favicon.ico' }]
-  ],
-  evergreen: true
-}
+  ]
+})

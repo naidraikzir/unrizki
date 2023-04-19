@@ -4,6 +4,7 @@ date: 1990-10-18
 lang: en-US
 description: Me
 layout: About
+list_exclude: true
 ---
 
 Name is **Rizki Ardian**. Develops apps from Indonesia 🇮🇩.  
