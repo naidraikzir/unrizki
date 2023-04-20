@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Unrizki",
-  description: "Unrizki's Blog",
+  description: "When life gives you lemons, return them",
   cleanUrls: true,
   head: [
     ['meta', { name: 'keywords', content: 'unrizki, developer' }],

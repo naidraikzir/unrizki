@@ -2,7 +2,7 @@
 title: Markdown
 date: 2017-01-14
 lang: en-US
-description: markdown
+description: Just another markdown examples
 ---
 
 ## Headings

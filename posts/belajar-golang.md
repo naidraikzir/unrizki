@@ -2,7 +2,7 @@
 title: Belajar Golang
 date: 2017-04-24
 lang: en-US
-description: golang
+description: I learned golang
 ---
 
 ![gopher](./gopher.png)

@@ -2,7 +2,7 @@
 title: My Vue 3 Vite Typescript Setup
 date: 2021-09-03
 lang: en-US
-description: vue, vite, typescript
+description: This is the setup when I tried vue 3
 ---
 
 <img src="./vue-3-vite-typescript.svg" alt="vue 3 vite typescript" style="max-height: 400px">
