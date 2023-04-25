@@ -2,6 +2,7 @@
 import { format, getYear } from 'date-fns'
 import { useData } from 'vitepress'
 import { ref, onMounted } from 'vue'
+import Utterances from './Utterances.vue'
 
 const { frontmatter } = useData()
 const loaded = ref(false)
@@ -31,6 +32,8 @@ function formatDate(date) {
     </div>
 
     <Content />
+
+    <Utterances />
   </div>
 </template>
 

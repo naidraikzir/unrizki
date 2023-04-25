@@ -2,7 +2,9 @@
   <footer>
     <div>
       <span>©</span>
-      <b>Unrizki</b>
+      <b>
+        <a href="https://github.com/naidraikzir/unrizki" target="_blank" rel="noopener">Unrizki</a>
+      </b>
       {{ new Date().getFullYear() }}
     </div>
   </footer>
@@ -17,6 +19,11 @@ footer {
   div {
     font-size: 0.75em;
   }
+}
+
+a {
+  border: 0;
+  color: inherit;
 }
 
 span {
