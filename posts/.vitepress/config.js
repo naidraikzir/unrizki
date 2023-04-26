@@ -1,9 +1,12 @@
-import { defineConfig } from 'vitepress'
+import { createContentLoader, defineConfig } from 'vitepress'
+import { SitemapStream } from 'sitemap'
+import { createWriteStream } from 'node:fs'
+import { resolve } from 'node:path'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Unrizki",
-  description: "When life gives you lemons, return them",
+  title: 'Unrizki',
+  description: 'When life gives you lemons, return them',
   cleanUrls: true,
   head: [
     ['meta', { name: 'keywords', content: 'unrizki, developer' }],
@@ -14,5 +17,23 @@ export default defineConfig({
     ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap' }],
     ['link', { rel: 'stylesheet', href: 'https://api.fontshare.com/css?f[]=satoshi@400,700&display=swap' }],
     ['link', { rel: 'shortcut icon', href: '/favicon.ico' }]
-  ]
+  ],
+  lastUpdated: true,
+  buildEnd: async ({ outDir }) => {
+    const sitemap = new SitemapStream({ hostname: 'https://unrizki.id' })
+    const pages = await createContentLoader('*.md').load()
+    const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
+
+    sitemap.pipe(writeStream)
+    pages.forEach((page) => sitemap.write(
+      page.url
+        // Strip `index.html` from URL
+        .replace(/index$/g, '')
+        // Optional: if Markdown files are located in a subfolder
+        .replace(/^\/posts/, '')
+      ))
+    sitemap.end()
+
+    await new Promise((r) => writeStream.on('finish', r))
+  }
 })
