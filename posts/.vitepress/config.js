@@ -8,6 +8,7 @@ export default defineConfig({
   title: 'Unrizki',
   description: 'When life gives you lemons, return them',
   cleanUrls: true,
+  lastUpdated: true,
   head: [
     ['meta', { name: 'keywords', content: 'unrizki, developer' }],
     ['meta', { name: 'author', content: 'unrizki' }],
@@ -18,7 +19,14 @@ export default defineConfig({
     ['link', { rel: 'stylesheet', href: 'https://api.fontshare.com/css?f[]=satoshi@400,700&display=swap' }],
     ['link', { rel: 'shortcut icon', href: '/favicon.ico' }]
   ],
-  lastUpdated: true,
+  transformHead: ({ page, siteData, pageData }) => {
+    const title = page === '404.md' ? 'Not Found' : pageData.frontmatter.title || siteData.title
+    const description = page === '404.md' ? 'Not Found' : pageData.frontmatter.description || siteData.description
+    const head = []
+    head.push(['meta', { property: 'og:title', content: title }])
+    head.push(['meta', { property: 'og:description', content: description }])
+    return head
+  },
   buildEnd: async ({ outDir }) => {
     const sitemap = new SitemapStream({ hostname: 'https://unrizki.id' })
     const pages = await createContentLoader('*.md').load()
