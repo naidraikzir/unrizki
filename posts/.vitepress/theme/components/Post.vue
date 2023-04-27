@@ -33,11 +33,18 @@ function formatDate(date) {
 
     <Content />
 
+    <hr />
+
     <Utterances />
   </div>
 </template>
 
 <style lang="scss" scoped>
+hr {
+  margin-bottom: 1em;
+  opacity: 0.5;
+}
+
 .wrapper {
   min-height: calc(100vh - (2 * 63px + 2em));
   opacity: 0;
