@@ -20,15 +20,18 @@ const theme = ref('light')
 
 onMounted(() => {
   detectTheme()
-  window.matchMedia('(prefers-color-scheme: dark)')
-    .addEventListener('change', e => setTheme(e.matches ? 'dark' : 'light'))
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', (e) => setTheme(e.matches ? 'dark' : 'light'))
 })
 
 function detectTheme() {
   const storageTheme = localStorage.getItem('theme')
   if (
-    (storageTheme && storageTheme === 'dark')
-    || (!storageTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    (storageTheme && storageTheme === 'dark') ||
+    (!storageTheme &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches)
   ) {
     setTheme('dark')
   } else {
@@ -109,7 +112,7 @@ nav {
     content: '☀️';
   }
 
-  [data-theme="dark"] &::before {
+  [data-theme='dark'] &::before {
     content: '🌙';
   }
 
@@ -118,7 +121,7 @@ nav {
       content: '🌙';
     }
 
-    [data-theme="light"] &::before {
+    [data-theme='light'] &::before {
       content: '☀️';
     }
   }

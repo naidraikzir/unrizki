@@ -2,10 +2,11 @@
   "name": "unrizki",
   "version": "2.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "vitepress dev posts",
-    "build": "vitepress build posts",
-    "preview": "vitepress preview posts"
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
   },
   "devDependencies": {
     "date-fns": "^2.29.3",

@@ -24,8 +24,8 @@ function formatDate(date) {
     class="title"
     v-for="(post, index) in posts"
     :key="index"
-    :style="{ transitionDelay: (index * 0.15) + 's' }"
-    :class="{ 'shown': loaded }"
+    :style="{ transitionDelay: index * 0.15 + 's' }"
+    :class="{ shown: loaded }"
   >
     <h3>
       <a :href="post.url">
@@ -46,9 +46,7 @@ section {
 .title {
   opacity: 0;
   transform: scale(1.1);
-  transition:
-    opacity 0.5s,
-    transform 0.5s cubic-bezier(0, 0, 0, 1.5);
+  transition: opacity 0.5s, transform 0.5s cubic-bezier(0, 0, 0, 1.5);
 
   &.shown {
     opacity: 1;

@@ -11,10 +11,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    class="greet"
-    :class="{ 'loaded': loaded }"
-  >
+  <div class="greet" :class="{ loaded: loaded }">
     <Content />
   </div>
 </template>

@@ -13,7 +13,7 @@ onMounted(() => {
   }, 150)
 })
 
-function formatDate(date) {
+function formatDate(date = new Date()) {
   return format(
     new Date(date),
     `MMMM d${getYear(new Date()) > getYear(new Date(date)) ? ', yyyy' : ''}`
@@ -22,10 +22,7 @@ function formatDate(date) {
 </script>
 
 <template>
-  <div
-    class="wrapper"
-    :class="{ 'loaded': loaded }"
-  >
+  <div class="wrapper" :class="{ loaded: loaded }">
     <div class="head">
       <h2>{{ frontmatter.title }}</h2>
       <b>{{ formatDate(frontmatter.date) }}</b>

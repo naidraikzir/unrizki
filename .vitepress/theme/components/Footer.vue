@@ -3,7 +3,12 @@
     <div>
       <span>©</span>
       <b>
-        <a href="https://github.com/naidraikzir/unrizki" target="_blank" rel="noopener">Unrizki</a>
+        <a
+          href="https://github.com/naidraikzir/unrizki"
+          target="_blank"
+          rel="noopener"
+          >Unrizki</a
+        >
       </b>
       {{ new Date().getFullYear() }}
     </div>

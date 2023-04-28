@@ -15,9 +15,7 @@ function scrollToTop() {
 </script>
 
 <template>
-  <button type="button" :class="{ hidden }" @click="scrollToTop">
-    ▲
-  </button>
+  <button type="button" :class="{ hidden }" @click="scrollToTop">▲</button>
 </template>
 
 <style lang="scss">

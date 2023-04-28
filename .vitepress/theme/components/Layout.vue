@@ -33,10 +33,9 @@ const { page, frontmatter } = useData()
 
 .content {
   min-height: calc(
-    100vh
-    - (/* header */ 1 * 1.5rem + 2rem + 2rem)
-    - (/* footer */ 1.5 * 0.75rem + 2rem + 2rem)
-    /* line-height * font-size + y-margins + y-paddings */
+    100vh - (/* header */ 1 * 1.5rem + 2rem + 2rem) -
+      (/* footer */ 1.5 * 0.75rem + 2rem + 2rem)
+      /* line-height * font-size + y-margins + y-paddings */
   );
   padding: 1em;
 }
