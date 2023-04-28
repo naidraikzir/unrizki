@@ -22,7 +22,6 @@ function scrollToTop() {
 button {
   align-items: center;
   background: var(--color-background-dark);
-  border-radius: 0.25em;
   bottom: 3em;
   color: var(--color-text-dark);
   display: flex;

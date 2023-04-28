@@ -97,8 +97,14 @@ nav {
   position: relative;
   transition: 0.3s;
 
-  &.active {
-    color: var(--color-text-link);
+  &.active::after {
+    background: var(--color-text-default);
+    content: '';
+    height: 3px;
+    left: 1px;
+    position: absolute;
+    top: 100%;
+    width: 0.5em;
   }
 }
 

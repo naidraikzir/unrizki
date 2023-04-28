@@ -13,6 +13,9 @@ devDependencies:
   sitemap:
     specifier: ^7.1.1
     version: 7.1.1
+  vite:
+    specifier: ^4.3.3
+    version: 4.3.3(sass@1.62.1)
   vitepress:
     specifier: 1.0.0-alpha.74
     version: 1.0.0-alpha.74(sass@1.62.1)

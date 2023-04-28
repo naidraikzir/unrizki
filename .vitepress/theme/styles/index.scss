@@ -7,7 +7,6 @@
   --color-background: #FFFFFF;
   --color-background-dark: #151F28;
   --color-text-default: #111;
-  --color-text-link: #0000FF;
   --color-text-dark: #FFFFFF;
 }
 
@@ -15,7 +14,6 @@
   --color-background: #000;
   --color-background-dark: #17151A;
   --color-text-default: #FFFFFF;
-  --color-text-link: #00FFD0;
   --color-text-dark: #FFFFFF;
 }
 
@@ -24,7 +22,6 @@
     --color-background: #000;
     --color-background-dark: #17151A;
     --color-text-default: #FFFFFF;
-    --color-text-link: #00FFD0;
     --color-text-dark: #FFFFFF;
   }
 
@@ -32,7 +29,6 @@
     --color-background: #FFFFFF;
     --color-background-dark: #151F28;
     --color-text-default: #111;
-    --color-text-link: #0000FF;
     --color-text-dark: #FFFFFF;
   }
 }
@@ -152,7 +148,6 @@ td {
 
 pre {
   background-color: var(--color-background-dark) !important;
-  border-radius: 4px;
   box-shadow: 0 1.5em 1.5em -0.75em rgba(0, 0, 0, 0.25);
   color: var(--color-text-dark);
   overflow-x: auto;
@@ -184,10 +179,16 @@ figcaption {
   text-align: center;
 }
 
+hr {
+  margin: 2em auto;
+  opacity: 0.5;
+}
+
+
 // inlines
 a {
-  border-bottom: 1px solid var(--color-text-link);
-  color: var(--color-text-link);
+  border-bottom: 1px solid var(--color-text-default);
+  color: var(--color-text-default);
   cursor: pointer;
   outline: 0;
   text-decoration: none;
@@ -200,7 +201,6 @@ q {
 
 code {
   background-color: var(--color-background-dark);
-  border-radius: 4px;
   box-shadow: 0 0.5em 0.5em -0.25em rgba(0, 0, 0, 0.25);
   color: var(--color-text-dark);
   display: inline-block;
@@ -275,7 +275,6 @@ input[type=range] {
     height: 4px;
     cursor: pointer;
     background: var(--color-background);
-    border-radius: 20px;
   }
 
   &::-webkit-slider-thumb {
@@ -283,7 +282,6 @@ input[type=range] {
     border: 2px solid var(--color-background);
     height: 16px;
     width: 16px;
-    border-radius: 8px;
     background: var(--color-background);
     cursor: pointer;
     -webkit-appearance: none;
@@ -301,14 +299,12 @@ input[type=range] {
     height: 4px;
     cursor: pointer;
     background: var(--color-background);
-    border-radius: 2px;
   }
 
   &::-moz-range-thumb {
     border: 1px solid rgba(var(--color-text-default), 0);
     height: 15px;
     width: 15px;
-    border-radius: 10px;
     background: var(--color-background);
     cursor: pointer;
   }
@@ -328,15 +324,9 @@ input[type=range] {
     border: 1px solid rgba(var(--color-text-default), 0);
     height: 15px;
     width: 15px;
-    border-radius: 10px;
     background: var(--color-background);
     cursor: pointer;
     height: 4px;
-  }
-
-  &::-ms-fill-upper,
-  &::-ms-fill-lower {
-    border-radius: 4px;
   }
 
   &::-ms-fill-upper {
