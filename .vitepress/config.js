@@ -42,7 +42,7 @@ export default defineConfig({
         href: 'https://api.fontshare.com/css?f[]=satoshi@400,700&display=swap'
       }
     ],
-    ['link', { rel: 'shortcut icon', href: '/favicon.ico' }]
+    ['link', { rel: 'shortcut icon', href: '/favicon.png' }]
   ],
   transformHead: ({ page, siteData, pageData }) => {
     const title =
