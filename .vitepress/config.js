@@ -60,7 +60,7 @@ export default defineConfig({
   },
   buildEnd: async ({ outDir }) => {
     const sitemap = new SitemapStream({ hostname: 'https://unrizki.id' })
-    const pages = await createContentLoader('*.md').load()
+    const pages = await createContentLoader('./**/*.md').load()
     const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
 
     sitemap.pipe(writeStream)
