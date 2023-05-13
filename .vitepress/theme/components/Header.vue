@@ -97,14 +97,18 @@ nav {
   position: relative;
   transition: 0.3s;
 
-  &.active::after {
-    background: var(--color-text-default);
-    content: '';
-    height: 3px;
-    left: 1px;
+  &::after {
+    bottom: 0;
+    content: '·';
+    left: 0;
+    line-height: 0;
+    opacity: 0;
     position: absolute;
-    top: 100%;
-    width: 0.5em;
+    transition: 0.3s;
+  }
+
+  &.active::after {
+    opacity: 1;
   }
 }
 

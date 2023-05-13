@@ -25,7 +25,7 @@ function formatDate(date = new Date()) {
   <div class="wrapper" :class="{ loaded: loaded }">
     <div class="head">
       <h2>{{ frontmatter.title }}</h2>
-      <b>{{ formatDate(frontmatter.date) }}</b>
+      <div>{{ formatDate(frontmatter.date) }}</div>
     </div>
 
     <Content />
@@ -57,7 +57,7 @@ function formatDate(date = new Date()) {
     margin-bottom: 0.25em;
   }
 
-  b {
+  div {
     font-size: 0.9em;
 
     &::before {

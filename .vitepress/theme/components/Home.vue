@@ -32,9 +32,7 @@ function formatDate(date) {
         {{ post.frontmatter.title }}
       </a>
     </h3>
-    <small>
-      <b>{{ formatDate(post.frontmatter.date) }}</b>
-    </small>
+    <small>{{ formatDate(post.frontmatter.date) }}</small>
   </div>
 </template>
 
