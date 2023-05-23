@@ -6,10 +6,8 @@ description: Me
 list_exclude: true
 ---
 
-Name is **Rizki Ardian**. Develops apps from Indonesia 🇮🇩.  
-Been using html, css, sass, jquery, laravel, node.js, vue.js, and react.js 🖖 since then.  
-A self taught person, loves to discover cool things.  
-An avid traveler 🎒. An amateur photographer 📷.  
+Hi, my name is **Rizki**. I develop web apps from Indonesia 🇮🇩.  
+I am a self taught person, loves to discover cool things.  
 Got any idea for your next big app? Let's get in touch 🙋
 
 <a href="mailto:hi@unrizki.id">✉️</a> – [Resume](/resume.pdf) – [Github](https://github.com/naidraikzir)
