@@ -40,5 +40,9 @@
 				margin-right: 0.5em;
 			}
 		}
+
+		& + :global(p img) {
+			height: 400px;
+		}
 	}
 </style>
