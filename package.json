@@ -1,6 +1,6 @@
 {
 	"name": "unrizki",
-	"version": "3.0.3",
+	"version": "3.0.4",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
@@ -12,7 +12,7 @@
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-static": "^3.0.6",
+		"@sveltejs/adapter-netlify": "^4.3.6",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"@types/eslint": "^9.6.0",
