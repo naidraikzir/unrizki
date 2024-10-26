@@ -20,7 +20,10 @@
 	<h2>{meta?.title}</h2>
 	<div>{formatDate(meta?.date)}</div>
 </div>
-<Content />
+
+<div class="post">
+	<Content />
+</div>
 
 <style>
 	.head {
@@ -40,9 +43,14 @@
 				margin-right: 0.5em;
 			}
 		}
+	}
 
-		& + :global(p img) {
-			height: 400px;
+	.post > :global(p:first-child img) {
+		object-fit: contain;
+		height: 10em;
+
+		@media screen and (min-width: 52em) {
+			height: 15em;
 		}
 	}
 </style>
