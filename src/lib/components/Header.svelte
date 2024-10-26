@@ -92,7 +92,7 @@
 		font-weight: 700;
 		margin-left: 0.75em;
 		position: relative;
-		transition: 0.3s;
+		transition: 0.2s;
 
 		&::after {
 			bottom: 0;
@@ -101,7 +101,7 @@
 			line-height: 0;
 			opacity: 0;
 			position: absolute;
-			transition: 0.3s;
+			transition: 0.2s;
 		}
 
 		&.active::after {

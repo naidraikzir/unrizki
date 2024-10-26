@@ -28,7 +28,7 @@
 		margin: 0;
 		position: fixed;
 		right: 0.75em;
-		transition: 0.3s;
+		transition: 0.2s;
 		width: 2em;
 
 		&.hidden {
