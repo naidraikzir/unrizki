@@ -68,9 +68,14 @@
 
 <style>
 	header {
+		align-items: center;
 		display: flex;
-		margin-bottom: 2em;
+		margin-bottom: 0.5em;
 		padding: 1em;
+
+		@media screen and (min-width: 52em) {
+			margin-bottom: 1em;
+		}
 	}
 
 	h3 {
@@ -89,7 +94,7 @@
 	.item {
 		border: 0;
 		color: var(--color-text-default);
-		font-weight: 700;
+		font-weight: 500;
 		margin-left: 0.75em;
 		position: relative;
 		transition: 0.2s;
@@ -112,24 +117,26 @@
 	.theme-toggle {
 		cursor: pointer;
 		display: inline-block;
-		margin-left: 0.75em;
+		margin-left: 0.7em;
+		position: relative;
+		top: 0.05em;
 		user-select: none;
 
 		&::before {
-			content: '☀️';
+			content: '🌞';
 		}
 
 		:global([data-theme='dark']) &::before {
-			content: '🌙';
+			content: '🌛';
 		}
 
 		@media (prefers-color-scheme: dark) {
 			&::before {
-				content: '🌙';
+				content: '🌛';
 			}
 
 			:global([data-theme='light']) &::before {
-				content: '☀️';
+				content: '🌞';
 			}
 		}
 	}
