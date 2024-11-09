@@ -12,7 +12,7 @@ export function postListLoader() {
     }
   );
 
-  const posts = Object
+  return Object
     .entries(glob_import)
     .sort((a, b) => {
       return new Date(b[1].metadata.date).getTime() - new Date(a[1].metadata.date).getTime();
@@ -21,6 +21,4 @@ export function postListLoader() {
       path: post[0].split('/').pop()?.replace('.md', '') as string,
       metadata: post[1].metadata
     }));
-
-  return posts;
 }

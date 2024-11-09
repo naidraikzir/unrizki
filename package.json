@@ -1,6 +1,6 @@
 {
 	"name": "unrizki",
-	"version": "3.0.5",
+	"version": "3.1.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
@@ -27,6 +27,7 @@
 		"prettier": "^3.3.2",
 		"prettier-plugin-svelte": "^3.2.6",
 		"shiki": "^1.22.1",
+		"super-sitemap": "^1.0.3",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"typescript": "^5.0.0",
