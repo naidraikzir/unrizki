@@ -12,7 +12,7 @@
 	$effect(() => {
 		setTimeout(() => {
 			loaded = true;
-		}, 150);
+		}, 0);
 	});
 </script>
 

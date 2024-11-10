@@ -15,7 +15,7 @@
 	$effect(() => {
 		setTimeout(() => {
 			loaded = true;
-		}, 250);
+		}, 0);
 	});
 
 	function formatDate(date: Date) {
