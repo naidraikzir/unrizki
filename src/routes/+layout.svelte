@@ -24,7 +24,7 @@
 <style>
 	.wrapper {
 		margin: 0 auto;
-		max-width: 42em;
+		max-width: 36em;
 	}
 
 	.content {

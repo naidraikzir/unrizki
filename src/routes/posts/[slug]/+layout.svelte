@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import Utterances from '$lib/components/Utterances.svelte';
+	import Lightbox from '$lib/components/LightBox.svelte';
 
 	type Props = {
 		children: Snippet;
@@ -21,6 +22,8 @@
 	<hr />
 	<Utterances />
 </div>
+
+<Lightbox />
 
 <style>
 	.wrapper {

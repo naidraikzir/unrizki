@@ -1,10 +1,21 @@
 <script lang="ts">
 	import { format, getYear } from 'date-fns';
 	import Head from '$lib/components/Head.svelte';
+	import { getLightbox } from '$lib/store.svelte';
 
+	const lightbox = getLightbox();
 	let { data } = $props();
 	const Content = data?.content;
 	const meta = data?.meta;
+
+	$effect(() => {
+		document.querySelectorAll('.post img').forEach((img) => {
+			img.addEventListener('click', (e) => {
+				const src = (e.target as HTMLImageElement)?.src;
+				lightbox.show(src);
+			})
+		})
+	})
 
 	function formatDate(date = new Date()) {
 		return format(
