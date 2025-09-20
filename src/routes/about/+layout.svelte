@@ -30,7 +30,7 @@
 		}
 	}
 
-	.greet a {
+	:global(.greet a) {
 		border: 0;
 		font-weight: 600;
 		text-decoration: none;
