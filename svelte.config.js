@@ -2,6 +2,7 @@ import adapter from '@sveltejs/adapter-netlify';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex, escapeSvelte } from 'mdsvex';
 import { createHighlighter } from 'shiki';
+import { addCopyButton } from 'shiki-transformer-copy-button'
 
 const theme = 'houston';
 const highlighter = await createHighlighter({
@@ -41,7 +42,11 @@ const config = {
 			extensions: ['.md'],
 			highlight: {
 				highlighter: async (code, lang = 'text') => {
-					const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme }));
+					const html = escapeSvelte(highlighter.codeToHtml(code, {
+					  lang,
+						theme,
+						transformers: [addCopyButton(code)]
+					}));
 					return `{@html \`${html}\` }`;
 				}
 			}

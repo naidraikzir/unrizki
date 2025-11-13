@@ -28,6 +28,7 @@
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
 		"shiki": "^3.13.0",
+		"shiki-transformer-copy-button": "^0.0.5",
 		"super-sitemap": "^1.0.5",
 		"svelte": "^5.39.3",
 		"svelte-check": "^4.3.1",
