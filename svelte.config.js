@@ -3,6 +3,7 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex, escapeSvelte } from 'mdsvex';
 import { createHighlighter } from 'shiki';
 import { addCopyButton } from 'shiki-transformer-copy-button'
+import readingTime from 'mdsvex-reading-time'
 
 const theme = 'houston';
 const highlighter = await createHighlighter({
@@ -49,7 +50,8 @@ const config = {
 					}));
 					return `{@html \`${html}\` }`;
 				}
-			}
+			},
+			remarkPlugins: [readingTime]
 		})
 	],
 

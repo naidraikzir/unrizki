@@ -29,7 +29,7 @@
 
 <div class="head">
 	<h2>{meta?.title}</h2>
-	<div>{formatDate(meta?.date)}</div>
+	<div>{formatDate(meta?.date)} · {meta?.readingTime?.text}</div>
 </div>
 
 <div class="post">
@@ -48,11 +48,11 @@
 		div {
 			font-size: 0.9em;
 
-			&::before {
+ 			&::before {
 				content: '⏤';
 				font-weight: 700;
 				margin-right: 0.5em;
-			}
+ 			}
 		}
 	}
 
