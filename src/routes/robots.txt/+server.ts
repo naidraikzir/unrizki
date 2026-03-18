@@ -12,7 +12,7 @@ export async function GET(): Promise<Response> {
   ].join('\n').trim();
 
   const headers = {
-    'Content-Type': 'text/plain'
+    'Content-Type': 'text/plain',
   }
 
   return new Response(body, { headers })

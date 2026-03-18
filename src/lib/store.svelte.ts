@@ -18,6 +18,6 @@ export function getLightbox() {
       setTimeout(() => {
         src = ''
       }, 300)
-    }
+    },
   }
 }

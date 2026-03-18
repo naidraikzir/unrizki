@@ -1,9 +1,9 @@
 import adapter from '@sveltejs/adapter-netlify'
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 import { mdsvex, escapeSvelte } from 'mdsvex'
+import readingTime from 'mdsvex-reading-time'
 import { createHighlighter } from 'shiki'
 import { addCopyButton } from 'shiki-transformer-copy-button'
-import readingTime from 'mdsvex-reading-time'
 
 const theme = 'houston'
 const highlighter = await createHighlighter({
@@ -29,8 +29,8 @@ const highlighter = await createHighlighter({
     'typescript',
     'vue',
     'yaml',
-    'zig'
-  ]
+    'zig',
+  ],
 })
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -47,24 +47,24 @@ const config = {
             highlighter.codeToHtml(code, {
               lang,
               theme,
-              transformers: [addCopyButton(code)]
-            })
+              transformers: [addCopyButton(code)],
+            }),
           )
           return `{@html \`${html}\` }`
-        }
+        },
       },
-      remarkPlugins: [readingTime]
-    })
+      remarkPlugins: [readingTime],
+    }),
   ],
 
   kit: {
     // adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
     // If your environment is not supported, or you settled on a specific environment, switch out the adapter.
     // See https://svelte.dev/docs/kit/adapters for more information about adapters.
-    adapter: adapter()
+    adapter: adapter(),
   },
 
-  extensions: ['.svelte', '.md']
+  extensions: ['.svelte', '.md'],
 }
 
 export default config
