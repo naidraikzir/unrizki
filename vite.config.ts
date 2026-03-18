@@ -4,15 +4,18 @@ import { defineConfig } from 'vite-plus'
 export default defineConfig({
   lint: { options: { typeAware: true, typeCheck: true } },
   fmt: {
-    singleQuote: true,
+    printWidth: 80,
     semi: false,
-    trailingComma: 'none',
-    printWidth: 100,
+    singleQuote: true,
+    experimentalSortImports: {},
     sortPackageJson: false,
-    ignorePatterns: ['package-lock.json', 'pnpm-lock.yaml', 'yarn.lock', '*.md']
+    ignorePatterns: ['*.md'],
   },
   staged: {
-    '*.{ts,svelte}': ['vp lint --type-aware', 'vp fmt --no-error-on-unmatched-pattern']
+    '*.{ts,svelte}': [
+      'vp lint --type-aware',
+      'vp fmt --no-error-on-unmatched-pattern',
+    ],
   },
-  plugins: [sveltekit()]
+  plugins: [sveltekit()],
 })

@@ -3,7 +3,7 @@
 	import PostList from '$lib/components/PostList.svelte';
 
 	let { data } = $props();
-	const { posts } = data;
+	const { posts } = $derived(data);
 </script>
 
 <Head description="When life gives you lemons, return them" />

@@ -3,8 +3,7 @@
 
 	type Props = {
 		posts: {
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
-			metadata: Record<string, any>;
+			metadata: Record<string, string>;
 			path: string;
 		}[];
 	};
@@ -18,7 +17,7 @@
 		}, 0);
 	});
 
-	function formatDate(date: Date) {
+	function formatDate(date: string) {
 		return format(
 			new Date(date),
 			`MMMM d${getYear(new Date()) > getYear(new Date(date)) ? ', yyyy' : ''}`
