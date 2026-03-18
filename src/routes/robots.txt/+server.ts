@@ -1,6 +1,6 @@
-import * as env from '$env/static/public';
+import * as env from '$env/static/public'
 
-export const prerender = true;
+export const prerender = true
 
 export async function GET(): Promise<Response> {
   // prettier-ignore
@@ -12,8 +12,8 @@ export async function GET(): Promise<Response> {
   ].join('\n').trim();
 
   const headers = {
-    'Content-Type': 'text/plain',
-  };
+    'Content-Type': 'text/plain'
+  }
 
-  return new Response(body, { headers });
+  return new Response(body, { headers })
 }

@@ -1,24 +1,20 @@
-import type { SvelteComponent } from "svelte";
+import type { SvelteComponent } from 'svelte'
 
 export function postListLoader() {
   const glob_import = import.meta.glob<{
-    default: SvelteComponent;
+    default: SvelteComponent
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    metadata: Record<string, any>;
-  }>(
-    '/src/posts/*.md',
-    {
-      eager: true
-    }
-  );
+    metadata: Record<string, any>
+  }>('/src/posts/*.md', {
+    eager: true
+  })
 
-  return Object
-    .entries(glob_import)
+  return Object.entries(glob_import)
     .sort((a, b) => {
-      return new Date(b[1].metadata.date).getTime() - new Date(a[1].metadata.date).getTime();
+      return new Date(b[1].metadata.date).getTime() - new Date(a[1].metadata.date).getTime()
     })
-    .map(post =>( {
+    .map((post) => ({
       path: post[0].split('/').pop()?.replace('.md', '') as string,
       metadata: post[1].metadata
-    }));
+    }))
 }

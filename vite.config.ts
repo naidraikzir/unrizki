@@ -9,7 +9,7 @@ export default defineConfig({
     trailingComma: 'none',
     printWidth: 100,
     sortPackageJson: false,
-    ignorePatterns: ['package-lock.json', 'pnpm-lock.yaml', 'yarn.lock']
+    ignorePatterns: ['package-lock.json', 'pnpm-lock.yaml', 'yarn.lock', '*.md']
   },
   staged: {
     '*.{ts,svelte}': ['vp lint --type-aware', 'vp fmt --no-error-on-unmatched-pattern']
